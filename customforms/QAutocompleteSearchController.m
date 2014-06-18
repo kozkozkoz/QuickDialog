@@ -278,7 +278,8 @@
             });
         }
         else {
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            NSLog(@"ERROR: request devuelve status error");
+            //[self.navigationController popToRootViewControllerAnimated:YES];
         }
     }
     
