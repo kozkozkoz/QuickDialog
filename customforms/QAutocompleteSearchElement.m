@@ -40,7 +40,7 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = self.enabled ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
     cell.textField.enabled = NO;
-    cell.textField.textAlignment = self.appearance.labelAlignment;
+    cell.textField.textAlignment = UITextAlignmentRight;
     
     return cell;
 }

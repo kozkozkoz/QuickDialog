@@ -67,6 +67,10 @@
 		7CC98B92194E394300B1F5C2 /* QComboboxElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC98B88194E394300B1F5C2 /* QComboboxElement.m */; };
 		7CC98B93194E394300B1F5C2 /* QTitleElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CC98B89194E394300B1F5C2 /* QTitleElement.h */; };
 		7CC98B94194E394300B1F5C2 /* QTitleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC98B8A194E394300B1F5C2 /* QTitleElement.m */; };
+		7CCC0FF1195AD62F00229008 /* QMultiRadioItemElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC0FED195AD62F00229008 /* QMultiRadioItemElement.m */; };
+		7CCC0FF2195AD62F00229008 /* QMultiRadioItemElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CCC0FEE195AD62F00229008 /* QMultiRadioItemElement.h */; };
+		7CCC0FF3195AD62F00229008 /* QMultiRadioElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC0FEF195AD62F00229008 /* QMultiRadioElement.m */; };
+		7CCC0FF4195AD62F00229008 /* QMultiRadioElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CCC0FF0195AD62F00229008 /* QMultiRadioElement.h */; };
 		D80B0E3813E052DF00FA85CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80B0E3713E052DF00FA85CA /* UIKit.framework */; };
 		D80B0E3A13E052DF00FA85CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80B0E3913E052DF00FA85CA /* Foundation.framework */; };
 		D80B0E3C13E052DF00FA85CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80B0E3B13E052DF00FA85CA /* CoreGraphics.framework */; };
@@ -246,6 +250,10 @@
 		7CC98B88194E394300B1F5C2 /* QComboboxElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QComboboxElement.m; sourceTree = "<group>"; };
 		7CC98B89194E394300B1F5C2 /* QTitleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTitleElement.h; sourceTree = "<group>"; };
 		7CC98B8A194E394300B1F5C2 /* QTitleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTitleElement.m; sourceTree = "<group>"; };
+		7CCC0FED195AD62F00229008 /* QMultiRadioItemElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMultiRadioItemElement.m; sourceTree = "<group>"; };
+		7CCC0FEE195AD62F00229008 /* QMultiRadioItemElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMultiRadioItemElement.h; sourceTree = "<group>"; };
+		7CCC0FEF195AD62F00229008 /* QMultiRadioElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMultiRadioElement.m; sourceTree = "<group>"; };
+		7CCC0FF0195AD62F00229008 /* QMultiRadioElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMultiRadioElement.h; sourceTree = "<group>"; };
 		D80B0E3313E052DF00FA85CA /* QuickDialogExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickDialogExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80B0E3713E052DF00FA85CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D80B0E3913E052DF00FA85CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -479,6 +487,10 @@
 		7CC98B80194E394300B1F5C2 /* customforms */ = {
 			isa = PBXGroup;
 			children = (
+				7CCC0FED195AD62F00229008 /* QMultiRadioItemElement.m */,
+				7CCC0FEE195AD62F00229008 /* QMultiRadioItemElement.h */,
+				7CCC0FEF195AD62F00229008 /* QMultiRadioElement.m */,
+				7CCC0FF0195AD62F00229008 /* QMultiRadioElement.h */,
 				7CC98B81194E394300B1F5C2 /* QAutocompleteSearchController.h */,
 				7CC98B82194E394300B1F5C2 /* QAutocompleteSearchController.m */,
 				7CC98B83194E394300B1F5C2 /* QAutocompleteSearchElement.h */,
@@ -781,6 +793,7 @@
 				D81F2EE114BBAFCE0066C372 /* QDateTimeElement.h in Headers */,
 				D81F2EE214BBAFCE0066C372 /* QDateTimeInlineElement.h in Headers */,
 				D81F2EE314BBAFCE0066C372 /* QElement.h in Headers */,
+				7CCC0FF4195AD62F00229008 /* QMultiRadioElement.h in Headers */,
 				D81F2EE414BBAFCE0066C372 /* QEntryElement.h in Headers */,
 				D81F2EE514BBAFCE0066C372 /* QEntryTableViewCell.h in Headers */,
 				7CC98B8D194E394300B1F5C2 /* QAutocompleteSearchElement.h in Headers */,
@@ -792,6 +805,7 @@
 				D81F2EF014BBAFCE0066C372 /* QuickDialogTableView.h in Headers */,
 				7CC98B8B194E394300B1F5C2 /* QAutocompleteSearchController.h in Headers */,
 				D81F2EF114BBAFCE0066C372 /* QRadioElement.h in Headers */,
+				7CCC0FF2195AD62F00229008 /* QMultiRadioItemElement.h in Headers */,
 				D81F2EF214BBAFCE0066C372 /* QRadioItemElement.h in Headers */,
 				D81F2EF314BBAFCE0066C372 /* QRadioSection.h in Headers */,
 				D81F2EF414BBAFCE0066C372 /* QRootElement.h in Headers */,
@@ -946,6 +960,7 @@
 				2C5423B1145ADF2B0026A152 /* QDateTimeInlineElement.m in Sources */,
 				2C5423BB145ADF2B0026A152 /* QLabelElement.m in Sources */,
 				2C5423B3145ADF2B0026A152 /* QElement.m in Sources */,
+				7CCC0FF3195AD62F00229008 /* QMultiRadioElement.m in Sources */,
 				D87A4D6F169DABA900D4DD63 /* QElement+Appearance.m in Sources */,
 				2C5423B5145ADF2B0026A152 /* QEntryElement.m in Sources */,
 				2C5423B7145ADF2B0026A152 /* QEntryTableViewCell.m in Sources */,
@@ -957,6 +972,7 @@
 				2C5423CA145ADF2B0026A152 /* QuickDialogTableDelegate.m in Sources */,
 				2C5423CC145ADF2B0026A152 /* QuickDialogTableView.m in Sources */,
 				2C5423CF145ADF2B0026A152 /* QRadioElement.m in Sources */,
+				7CCC0FF1195AD62F00229008 /* QMultiRadioItemElement.m in Sources */,
 				D80F572217E115580052EBE3 /* QFlatAppearance.m in Sources */,
 				D82A4AF617BEE90E000986C8 /* QProgressElement.m in Sources */,
 				2C5423D1145ADF2B0026A152 /* QRadioItemElement.m in Sources */,

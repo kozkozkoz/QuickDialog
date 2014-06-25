@@ -297,6 +297,11 @@
     //if user searched for something and found nothing just add a row to display a message
     if(numberOfRows == 0 && [self.queryString length] > 0){
         numberOfRows = 1;
+    }else if(numberOfRows == 0){
+        self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        numberOfRows = 0;
+    }else{
+         self.myTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     }
     NSLog(@"Rows: %li", (long)numberOfRows);
     return numberOfRows;
