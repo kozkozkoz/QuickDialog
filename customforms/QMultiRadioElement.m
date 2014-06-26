@@ -16,18 +16,31 @@
 #import "QMultiRadioElement.h"
 #import "QMultiRadioItemElement.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @implementation QMultiRadioElement {
     QSection *_internalRadioItemsSection;
 }
 
-@synthesize values = _values;
 @synthesize items = _items;
+@synthesize item_title = _item_title;
+@synthesize item_description = _item_description;
 
-@synthesize selectedIndexes = _selectedIndexes;
 @synthesize selectedItems = _selectedItems;
+@synthesize selectedIndexes = _selectedIndexes;
 
+
+// borrar
+@synthesize values = _values;
 
 - (void)createElements {
+    
+    NSLog(@"ITEMS: %@",self.items);
+    NSLog(@"ITEM-title: %@",self.item_title);
+    NSLog(@"ITEM-desc: %@",self.item_description);
+    
+    self.selectedIndexes = [[NSMutableArray alloc] init];
+    
     _sections = nil;
     _internalRadioItemsSection = [[QSection alloc] init];
     _parentSection = _internalRadioItemsSection;
@@ -62,7 +75,7 @@
 	if (_key==nil)
 		return;
 	
-	[obj setValue:self.selectedIndexes forKey:_key];
+	[obj setValue:self.selectedItems forKey:_key];
 }
 
 - (QMultiRadioElement *)initWithItems:(NSArray *)stringArray selectedIndexes:(NSArray*)selected title:(NSString *)title {
@@ -93,7 +106,13 @@
   
     NSString *selectedValue = nil;
     if ([_selectedIndexes count] > 0) {
-      selectedValue = [self.selectedItems componentsJoinedByString:@", "];
+        
+        NSMutableArray *a = [NSMutableArray array];
+        [self.selectedItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [a addObject:[obj valueForKey:self.item_title]];
+        }];
+        
+        selectedValue = [a componentsJoinedByString:@", "];
     }
 
     if (self.title == NULL){
@@ -104,6 +123,19 @@
         cell.textLabel.text = _title;
         cell.textField.text = selectedValue;
         cell.imageView.image = nil;
+        
+        if(self.strQty == nil){
+            self.strQty = [[UILabel alloc] initWithFrame:CGRectMake(cell.frame.origin.x + 270, 12, 21, 21)];
+            self.strQty.backgroundColor = cell.backgroundColor;
+            self.strQty.textColor = UIColorFromRGB(0xdddddd);
+            self.strQty.textAlignment = UITextAlignmentRight;
+        }
+        
+        [cell addSubview:self.strQty];
+        [self.strQty setText:[NSString stringWithFormat:@"%lu", (unsigned long)self.selectedItems.count]];
+        
+        
+        //cell.accessoryView = strQty;
     }
     cell.textField.textAlignment = UITextAlignmentRight;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

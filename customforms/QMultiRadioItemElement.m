@@ -23,7 +23,7 @@
     self = [super init];
     _radioElement = radioElement;
     _index = index;
-    _title = [[radioElement.items objectAtIndex:_index] description];
+    _title = [[radioElement.items objectAtIndex:_index] valueForKey:radioElement.item_title];
     return self;
 }
 

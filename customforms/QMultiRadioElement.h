@@ -15,14 +15,21 @@
 #import "QuickDialogTableView.h"
 
 @interface QMultiRadioElement : QEntryElement {
-    NSArray *_items;
+    NSMutableArray *_items;
     NSArray *_values;
+    NSString *_item_title;
+    NSString *_item_description;
 
-  NSMutableArray* _selectedIndexes;
-  NSMutableArray* _selectedItems;
+    NSMutableArray* _selectedIndexes;
+    NSMutableArray* _selectedItems;
 }
 
-@property(nonatomic, retain) NSArray *items;
+@property(nonatomic, strong) NSMutableArray *items;
+@property(nonatomic, strong) NSString *item_title;
+@property(nonatomic, strong) NSString *item_description;
+
+@property(nonatomic, strong) UILabel *strQty;
+
 @property(nonatomic, retain) NSArray *values;
 
 @property (nonatomic, strong)   NSMutableArray  *selectedIndexes;
@@ -30,7 +37,7 @@
 
 - (void)createElements;
 
-- (QMultiRadioElement *)initWithItems:(NSArray *)stringArray selectedIndexes:(NSArray*)selected;
-- (QMultiRadioElement *)initWithItems:(NSArray *)stringArray selectedIndexes:(NSArray*)selected title:(NSString *)title;
+/*- (QMultiRadioElement *)initWithItems:(NSArray *)stringArray selectedIndexes:(NSArray*)selected;
+- (QMultiRadioElement *)initWithItems:(NSArray *)stringArray selectedIndexes:(NSArray*)selected title:(NSString *)title;*/
 
 @end
