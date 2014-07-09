@@ -68,7 +68,9 @@
     textController.willDisappearCallback = ^ {
         NSLog(@"-> will disappear called: %@",[[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:@"name"]);
         
-        weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:@"name"];
+        
+        NSLog(@"Results: %@",[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row]);
+        weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
         
          weakSelf.value = [weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
         //[[tableView cellForElement:weakSelf] setNeedsDisplay];
