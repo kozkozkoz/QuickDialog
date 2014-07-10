@@ -143,7 +143,13 @@
 - (void)fetchValueIntoObject:(id)obj {
 	if (_key==nil)
 		return;
-    [obj setValue:_dateValue forKey:_key];
+    
+    NSDateFormatter *dateFormatter= [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:SS"];
+    
+    NSString *dateValueFormatted = [dateFormatter stringFromDate:_dateValue];
+    
+    [obj setValue:dateValueFormatted forKey:_key];
 }
 
 - (CGFloat)getRowHeightForTableView:(QuickDialogTableView *)tableView

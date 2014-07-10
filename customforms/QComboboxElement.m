@@ -80,17 +80,22 @@
     __weak QComboboxElement *weakSelf = self;
 	__weak QComboboxController *weakTextController = textController;
     textController.willDisappearCallback = ^ {
-        NSLog(@"-> will disappear called: %@",[[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:@"name"]);
         
         if(weakSelf.engine!=nil && ![weakSelf.engine isEqual:@""]){
             if([weakTextController.queryString length] > 0){
-                weakSelf.textValue = [[weakTextController.resultListFiltered objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
                 
-                weakSelf.value = [weakTextController.resultListFiltered objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
-            }else{
-                weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
+                if([weakTextController.resultListFiltered count] > 0){
+                    weakSelf.textValue = [[weakTextController.resultListFiltered objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
                 
-                weakSelf.value = [weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
+                    weakSelf.value = [weakTextController.resultListFiltered objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
+                }
+                }else{
+                    if([weakTextController.resultList count] > 0){
+                        weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
+                        
+                        weakSelf.value = [weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
+                    }
+
             }
 
         }else{
