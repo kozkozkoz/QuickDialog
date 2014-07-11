@@ -336,8 +336,14 @@
             NSString *title = [countryInfo  valueForKey:self.item_title];
             NSString *description = [countryInfo  valueForKey:self.item_description];
             
-            myCellView.textLabel.text = [NSString stringWithFormat:@"%@",title];
-            myCellView.detailTextLabel.text = description;
+            if([title isKindOfClass:[NSString class]]){
+                myCellView.textLabel.text = [NSString stringWithFormat:@"%@",title];
+            }
+            if([description isKindOfClass:[NSString class]]){
+                myCellView.detailTextLabel.text = description;
+            }
+            
+           
         }
         //display message to user
         else {

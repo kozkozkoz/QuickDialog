@@ -69,7 +69,7 @@
         
         if([weakTextController.resultList count] > 0){
             
-            NSLog(@"Results: %@",[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row]);
+            NSLog(@"Results: %@",[[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title]);
             weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
             
             weakSelf.value = [weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
