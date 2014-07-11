@@ -40,6 +40,7 @@
     [cell applyAppearanceForElement:self];
     
     cell.textLabel.text = self.title;
+    
     cell.detailTextLabel.text = nil;
     cell.imageView.image = nil;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
