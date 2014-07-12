@@ -57,6 +57,35 @@
 		5C50EF790D3A46FEDCDF0FA0 /* QMapElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C50E5B0F3DD0967B8186785 /* QMapElement.m */; };
 		5C50EFADB34DF61735763BCF /* UIColor+ColorUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C50E4D5FFEF3EC8D7D7C219 /* UIColor+ColorUtilities.m */; };
 		5C50EFD5861E1FE78AD17F06 /* QWebElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C50E93B5273C6D9050767C6 /* QWebElement.m */; };
+		7C7B3D901971879F00EDC2A6 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D711971879F00EDC2A6 /* Base64.h */; };
+		7C7B3D911971879F00EDC2A6 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D721971879F00EDC2A6 /* Base64.m */; };
+		7C7B3D921971879F00EDC2A6 /* UNIBaseRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D741971879F00EDC2A6 /* UNIBaseRequest.h */; };
+		7C7B3D931971879F00EDC2A6 /* UNIBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D751971879F00EDC2A6 /* UNIBaseRequest.m */; };
+		7C7B3D941971879F00EDC2A6 /* UNIBodyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D761971879F00EDC2A6 /* UNIBodyRequest.h */; };
+		7C7B3D951971879F00EDC2A6 /* UNIBodyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D771971879F00EDC2A6 /* UNIBodyRequest.m */; };
+		7C7B3D961971879F00EDC2A6 /* UNISimpleRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D781971879F00EDC2A6 /* UNISimpleRequest.h */; };
+		7C7B3D971971879F00EDC2A6 /* UNISimpleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D791971879F00EDC2A6 /* UNISimpleRequest.m */; };
+		7C7B3D981971879F00EDC2A6 /* UNIHTTPBinaryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D7B1971879F00EDC2A6 /* UNIHTTPBinaryResponse.h */; };
+		7C7B3D991971879F00EDC2A6 /* UNIHTTPBinaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D7C1971879F00EDC2A6 /* UNIHTTPBinaryResponse.m */; };
+		7C7B3D9A1971879F00EDC2A6 /* UNIHTTPJsonResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D7D1971879F00EDC2A6 /* UNIHTTPJsonResponse.h */; };
+		7C7B3D9B1971879F00EDC2A6 /* UNIHTTPJsonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D7E1971879F00EDC2A6 /* UNIHTTPJsonResponse.m */; };
+		7C7B3D9C1971879F00EDC2A6 /* UNIHTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D7F1971879F00EDC2A6 /* UNIHTTPResponse.h */; };
+		7C7B3D9D1971879F00EDC2A6 /* UNIHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D801971879F00EDC2A6 /* UNIHTTPResponse.m */; };
+		7C7B3D9E1971879F00EDC2A6 /* UNIHTTPStringResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D811971879F00EDC2A6 /* UNIHTTPStringResponse.h */; };
+		7C7B3D9F1971879F00EDC2A6 /* UNIHTTPStringResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D821971879F00EDC2A6 /* UNIHTTPStringResponse.m */; };
+		7C7B3DA01971879F00EDC2A6 /* UNIJsonNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D831971879F00EDC2A6 /* UNIJsonNode.h */; };
+		7C7B3DA11971879F00EDC2A6 /* UNIJsonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D841971879F00EDC2A6 /* UNIJsonNode.m */; };
+		7C7B3DA21971879F00EDC2A6 /* UNIHTTPClientHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D851971879F00EDC2A6 /* UNIHTTPClientHelper.h */; };
+		7C7B3DA31971879F00EDC2A6 /* UNIHTTPClientHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D861971879F00EDC2A6 /* UNIHTTPClientHelper.m */; };
+		7C7B3DA41971879F00EDC2A6 /* UNIHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D871971879F00EDC2A6 /* UNIHTTPRequest.h */; };
+		7C7B3DA51971879F00EDC2A6 /* UNIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D881971879F00EDC2A6 /* UNIHTTPRequest.m */; };
+		7C7B3DA61971879F00EDC2A6 /* UNIHTTPRequestWithBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D891971879F00EDC2A6 /* UNIHTTPRequestWithBody.h */; };
+		7C7B3DA71971879F00EDC2A6 /* UNIHTTPRequestWithBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D8A1971879F00EDC2A6 /* UNIHTTPRequestWithBody.m */; };
+		7C7B3DA81971879F00EDC2A6 /* Unirest-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D8B1971879F00EDC2A6 /* Unirest-Prefix.pch */; };
+		7C7B3DA91971879F00EDC2A6 /* UNIRest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D8C1971879F00EDC2A6 /* UNIRest.h */; };
+		7C7B3DAA1971879F00EDC2A6 /* UNIRest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D8D1971879F00EDC2A6 /* UNIRest.m */; };
+		7C7B3DAB1971879F00EDC2A6 /* UNIUrlConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7B3D8E1971879F00EDC2A6 /* UNIUrlConnection.h */; };
+		7C7B3DAC1971879F00EDC2A6 /* UNIUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B3D8F1971879F00EDC2A6 /* UNIUrlConnection.m */; };
 		7CC98B8B194E394300B1F5C2 /* QAutocompleteSearchController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CC98B81194E394300B1F5C2 /* QAutocompleteSearchController.h */; };
 		7CC98B8C194E394300B1F5C2 /* QAutocompleteSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC98B82194E394300B1F5C2 /* QAutocompleteSearchController.m */; };
 		7CC98B8D194E394300B1F5C2 /* QAutocompleteSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CC98B83194E394300B1F5C2 /* QAutocompleteSearchElement.h */; };
@@ -240,6 +269,38 @@
 		5C50EED1BB826D7F7B08055A /* QPickerElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPickerElement.h; sourceTree = "<group>"; };
 		5C50EF9F76D029609CD376E2 /* QColorPickerElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QColorPickerElement.h; sourceTree = "<group>"; };
 		5C50EFD565900926223F50D4 /* QMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMapViewController.m; sourceTree = "<group>"; };
+		7C7B3C6E19716EC900EDC2A6 /* libUnirest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUnirest.a; path = "../../../../Library/Developer/Xcode/DerivedData/HooksApp-dwniqsjxarxviifeykjqaxjqrmyh/Build/Products/Debug-iphoneos/libUnirest.a"; sourceTree = "<group>"; };
+		7C7B3C82197171FE00EDC2A6 /* libPods-HooksApp-Unirest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-HooksApp-Unirest.a"; path = "../Pods/build/Debug-iphoneos/libPods-HooksApp-Unirest.a"; sourceTree = "<group>"; };
+		7C7B3CC4197174D700EDC2A6 /* libPods-HooksApp-Unirest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-HooksApp-Unirest.a"; path = "../Pods/build/Release-iphoneos/libPods-HooksApp-Unirest.a"; sourceTree = "<group>"; };
+		7C7B3D711971879F00EDC2A6 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		7C7B3D721971879F00EDC2A6 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		7C7B3D741971879F00EDC2A6 /* UNIBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIBaseRequest.h; sourceTree = "<group>"; };
+		7C7B3D751971879F00EDC2A6 /* UNIBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIBaseRequest.m; sourceTree = "<group>"; };
+		7C7B3D761971879F00EDC2A6 /* UNIBodyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIBodyRequest.h; sourceTree = "<group>"; };
+		7C7B3D771971879F00EDC2A6 /* UNIBodyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIBodyRequest.m; sourceTree = "<group>"; };
+		7C7B3D781971879F00EDC2A6 /* UNISimpleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNISimpleRequest.h; sourceTree = "<group>"; };
+		7C7B3D791971879F00EDC2A6 /* UNISimpleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNISimpleRequest.m; sourceTree = "<group>"; };
+		7C7B3D7B1971879F00EDC2A6 /* UNIHTTPBinaryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIHTTPBinaryResponse.h; sourceTree = "<group>"; };
+		7C7B3D7C1971879F00EDC2A6 /* UNIHTTPBinaryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIHTTPBinaryResponse.m; sourceTree = "<group>"; };
+		7C7B3D7D1971879F00EDC2A6 /* UNIHTTPJsonResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIHTTPJsonResponse.h; sourceTree = "<group>"; };
+		7C7B3D7E1971879F00EDC2A6 /* UNIHTTPJsonResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIHTTPJsonResponse.m; sourceTree = "<group>"; };
+		7C7B3D7F1971879F00EDC2A6 /* UNIHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIHTTPResponse.h; sourceTree = "<group>"; };
+		7C7B3D801971879F00EDC2A6 /* UNIHTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIHTTPResponse.m; sourceTree = "<group>"; };
+		7C7B3D811971879F00EDC2A6 /* UNIHTTPStringResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIHTTPStringResponse.h; sourceTree = "<group>"; };
+		7C7B3D821971879F00EDC2A6 /* UNIHTTPStringResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIHTTPStringResponse.m; sourceTree = "<group>"; };
+		7C7B3D831971879F00EDC2A6 /* UNIJsonNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIJsonNode.h; sourceTree = "<group>"; };
+		7C7B3D841971879F00EDC2A6 /* UNIJsonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIJsonNode.m; sourceTree = "<group>"; };
+		7C7B3D851971879F00EDC2A6 /* UNIHTTPClientHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIHTTPClientHelper.h; sourceTree = "<group>"; };
+		7C7B3D861971879F00EDC2A6 /* UNIHTTPClientHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIHTTPClientHelper.m; sourceTree = "<group>"; };
+		7C7B3D871971879F00EDC2A6 /* UNIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIHTTPRequest.h; sourceTree = "<group>"; };
+		7C7B3D881971879F00EDC2A6 /* UNIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIHTTPRequest.m; sourceTree = "<group>"; };
+		7C7B3D891971879F00EDC2A6 /* UNIHTTPRequestWithBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIHTTPRequestWithBody.h; sourceTree = "<group>"; };
+		7C7B3D8A1971879F00EDC2A6 /* UNIHTTPRequestWithBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIHTTPRequestWithBody.m; sourceTree = "<group>"; };
+		7C7B3D8B1971879F00EDC2A6 /* Unirest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Unirest-Prefix.pch"; sourceTree = "<group>"; };
+		7C7B3D8C1971879F00EDC2A6 /* UNIRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIRest.h; sourceTree = "<group>"; };
+		7C7B3D8D1971879F00EDC2A6 /* UNIRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIRest.m; sourceTree = "<group>"; };
+		7C7B3D8E1971879F00EDC2A6 /* UNIUrlConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIUrlConnection.h; sourceTree = "<group>"; };
+		7C7B3D8F1971879F00EDC2A6 /* UNIUrlConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIUrlConnection.m; sourceTree = "<group>"; };
 		7CC98B81194E394300B1F5C2 /* QAutocompleteSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAutocompleteSearchController.h; sourceTree = "<group>"; };
 		7CC98B82194E394300B1F5C2 /* QAutocompleteSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAutocompleteSearchController.m; sourceTree = "<group>"; };
 		7CC98B83194E394300B1F5C2 /* QAutocompleteSearchElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAutocompleteSearchElement.h; sourceTree = "<group>"; };
@@ -484,6 +545,58 @@
 			path = extras;
 			sourceTree = "<group>";
 		};
+		7C7B3D701971879F00EDC2A6 /* Unirest */ = {
+			isa = PBXGroup;
+			children = (
+				7C7B3D711971879F00EDC2A6 /* Base64.h */,
+				7C7B3D721971879F00EDC2A6 /* Base64.m */,
+				7C7B3D731971879F00EDC2A6 /* HttpRequest */,
+				7C7B3D7A1971879F00EDC2A6 /* HttpResponse */,
+				7C7B3D851971879F00EDC2A6 /* UNIHTTPClientHelper.h */,
+				7C7B3D861971879F00EDC2A6 /* UNIHTTPClientHelper.m */,
+				7C7B3D871971879F00EDC2A6 /* UNIHTTPRequest.h */,
+				7C7B3D881971879F00EDC2A6 /* UNIHTTPRequest.m */,
+				7C7B3D891971879F00EDC2A6 /* UNIHTTPRequestWithBody.h */,
+				7C7B3D8A1971879F00EDC2A6 /* UNIHTTPRequestWithBody.m */,
+				7C7B3D8B1971879F00EDC2A6 /* Unirest-Prefix.pch */,
+				7C7B3D8C1971879F00EDC2A6 /* UNIRest.h */,
+				7C7B3D8D1971879F00EDC2A6 /* UNIRest.m */,
+				7C7B3D8E1971879F00EDC2A6 /* UNIUrlConnection.h */,
+				7C7B3D8F1971879F00EDC2A6 /* UNIUrlConnection.m */,
+			);
+			path = Unirest;
+			sourceTree = "<group>";
+		};
+		7C7B3D731971879F00EDC2A6 /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				7C7B3D741971879F00EDC2A6 /* UNIBaseRequest.h */,
+				7C7B3D751971879F00EDC2A6 /* UNIBaseRequest.m */,
+				7C7B3D761971879F00EDC2A6 /* UNIBodyRequest.h */,
+				7C7B3D771971879F00EDC2A6 /* UNIBodyRequest.m */,
+				7C7B3D781971879F00EDC2A6 /* UNISimpleRequest.h */,
+				7C7B3D791971879F00EDC2A6 /* UNISimpleRequest.m */,
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		7C7B3D7A1971879F00EDC2A6 /* HttpResponse */ = {
+			isa = PBXGroup;
+			children = (
+				7C7B3D7B1971879F00EDC2A6 /* UNIHTTPBinaryResponse.h */,
+				7C7B3D7C1971879F00EDC2A6 /* UNIHTTPBinaryResponse.m */,
+				7C7B3D7D1971879F00EDC2A6 /* UNIHTTPJsonResponse.h */,
+				7C7B3D7E1971879F00EDC2A6 /* UNIHTTPJsonResponse.m */,
+				7C7B3D7F1971879F00EDC2A6 /* UNIHTTPResponse.h */,
+				7C7B3D801971879F00EDC2A6 /* UNIHTTPResponse.m */,
+				7C7B3D811971879F00EDC2A6 /* UNIHTTPStringResponse.h */,
+				7C7B3D821971879F00EDC2A6 /* UNIHTTPStringResponse.m */,
+				7C7B3D831971879F00EDC2A6 /* UNIJsonNode.h */,
+				7C7B3D841971879F00EDC2A6 /* UNIJsonNode.m */,
+			);
+			path = HttpResponse;
+			sourceTree = "<group>";
+		};
 		7CC98B80194E394300B1F5C2 /* customforms */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +621,7 @@
 		D80B0E2813E052DF00FA85CA = {
 			isa = PBXGroup;
 			children = (
+				7C7B3D701971879F00EDC2A6 /* Unirest */,
 				7CC98B80194E394300B1F5C2 /* customforms */,
 				2CE450A8145ADF8000B77D0E /* libQuickDialog */,
 				D860356713E0534000CB1785 /* quickdialog */,
@@ -530,6 +644,9 @@
 		D80B0E3613E052DF00FA85CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C7B3CC4197174D700EDC2A6 /* libPods-HooksApp-Unirest.a */,
+				7C7B3C82197171FE00EDC2A6 /* libPods-HooksApp-Unirest.a */,
+				7C7B3C6E19716EC900EDC2A6 /* libUnirest.a */,
 				D82A4AFF17BEF033000986C8 /* MessageUI.framework */,
 				D8D0294317BEDA5200D9B6CE /* CoreLocation.framework */,
 				D8D0294117BEDA4D00D9B6CE /* MapKit.framework */,
@@ -775,17 +892,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C54239F145ADF2B0026A152 /* QuickDialog.h in Headers */,
+				7C7B3D941971879F00EDC2A6 /* UNIBodyRequest.h in Headers */,
+				7C7B3D9C1971879F00EDC2A6 /* UNIHTTPResponse.h in Headers */,
 				D8F180E813F0599A009B0CCA /* NSMutableArray+MoveObject.h in Headers */,
 				D81F2ED714BBAFCE0066C372 /* QRootBuilder.h in Headers */,
+				7C7B3D9E1971879F00EDC2A6 /* UNIHTTPStringResponse.h in Headers */,
 				D80F572117E115580052EBE3 /* QFlatAppearance.h in Headers */,
+				7C7B3DA61971879F00EDC2A6 /* UNIHTTPRequestWithBody.h in Headers */,
 				D81F2ED814BBAFCE0066C372 /* QBindingEvaluator.h in Headers */,
 				D81F2EE714BBAFCE0066C372 /* QLabelElement.h in Headers */,
+				7C7B3DA81971879F00EDC2A6 /* Unirest-Prefix.pch in Headers */,
 				D81F2ED914BBAFCE0066C372 /* QBadgeLabel.h in Headers */,
+				7C7B3DA21971879F00EDC2A6 /* UNIHTTPClientHelper.h in Headers */,
 				D81F2EDA14BBAFCE0066C372 /* QDecimalTableViewCell.h in Headers */,
 				D81F2EDB14BBAFCE0066C372 /* QDecimalElement.h in Headers */,
 				D8820C7F16A3544C0070AE22 /* QImageElement.h in Headers */,
 				D8820C8016A3544F0070AE22 /* QImageTableViewCell.h in Headers */,
 				D81F2EDC14BBAFCE0066C372 /* QBadgeElement.h in Headers */,
+				7C7B3DA01971879F00EDC2A6 /* UNIJsonNode.h in Headers */,
 				D81F2EDD14BBAFCE0066C372 /* QBadgeTableCell.h in Headers */,
 				D81F2EDE14BBAFCE0066C372 /* QBooleanElement.h in Headers */,
 				D81F2EDF14BBAFCE0066C372 /* QButtonElement.h in Headers */,
@@ -805,11 +929,15 @@
 				D81F2EF014BBAFCE0066C372 /* QuickDialogTableView.h in Headers */,
 				7CC98B8B194E394300B1F5C2 /* QAutocompleteSearchController.h in Headers */,
 				D81F2EF114BBAFCE0066C372 /* QRadioElement.h in Headers */,
+				7C7B3D901971879F00EDC2A6 /* Base64.h in Headers */,
 				7CCC0FF2195AD62F00229008 /* QMultiRadioItemElement.h in Headers */,
+				7C7B3D9A1971879F00EDC2A6 /* UNIHTTPJsonResponse.h in Headers */,
 				D81F2EF214BBAFCE0066C372 /* QRadioItemElement.h in Headers */,
 				D81F2EF314BBAFCE0066C372 /* QRadioSection.h in Headers */,
+				7C7B3DA91971879F00EDC2A6 /* UNIRest.h in Headers */,
 				D81F2EF414BBAFCE0066C372 /* QRootElement.h in Headers */,
 				D81F2EF514BBAFCE0066C372 /* QRootElement+JsonBuilder.h in Headers */,
+				7C7B3DA41971879F00EDC2A6 /* UNIHTTPRequest.h in Headers */,
 				D81F2EF614BBAFCE0066C372 /* QSection.h in Headers */,
 				D81F2EF714BBAFCE0066C372 /* QSortingSection.h in Headers */,
 				D82A4AF317BEE90E000986C8 /* QFloatTableViewCell.h in Headers */,
@@ -823,8 +951,10 @@
 				7CC98B93194E394300B1F5C2 /* QTitleElement.h in Headers */,
 				7CC98B8F194E394300B1F5C2 /* QComboboxController.h in Headers */,
 				D87B4FCB14F16197006DA833 /* QAutoEntryElement.h in Headers */,
+				7C7B3D921971879F00EDC2A6 /* UNIBaseRequest.h in Headers */,
 				D87B4FCD14F16197006DA833 /* QAutoEntryTableViewCell.h in Headers */,
 				D8B39450151394E1008ECB34 /* QEmptyListElement.h in Headers */,
+				7C7B3DAB1971879F00EDC2A6 /* UNIUrlConnection.h in Headers */,
 				D8B39452151394E1008ECB34 /* QMultilineElement.h in Headers */,
 				D8B39455151394E1008ECB34 /* QMultilineTextViewController.h in Headers */,
 				D8B394691514E8B3008ECB34 /* QSegmentedElement.h in Headers */,
@@ -836,7 +966,9 @@
 				F2304357156CDFDD006D0A56 /* QTextField.h in Headers */,
 				D8E0748E165A7D08004E7035 /* QuickDialogController+Navigation.h in Headers */,
 				5C50E6D6FE14BF78231F9671 /* QuickDialogController+Animations.h in Headers */,
+				7C7B3D981971879F00EDC2A6 /* UNIHTTPBinaryResponse.h in Headers */,
 				D82A4AF517BEE90E000986C8 /* QProgressElement.h in Headers */,
+				7C7B3D961971879F00EDC2A6 /* UNISimpleRequest.h in Headers */,
 				D87A4D6E169DABA900D4DD63 /* QElement+Appearance.h in Headers */,
 				5C50E1E06A0557312EB9B187 /* QAppearance.h in Headers */,
 				D87A4D90169DB59500D4DD63 /* QAppearance.h in Headers */,
@@ -956,16 +1088,22 @@
 				2C5423A9145ADF2B0026A152 /* QBooleanElement.m in Sources */,
 				2C5423AB145ADF2B0026A152 /* QButtonElement.m in Sources */,
 				2C5423AD145ADF2B0026A152 /* QDateEntryTableViewCell.m in Sources */,
+				7C7B3DAA1971879F00EDC2A6 /* UNIRest.m in Sources */,
+				7C7B3DA51971879F00EDC2A6 /* UNIHTTPRequest.m in Sources */,
 				2C5423AF145ADF2B0026A152 /* QDateTimeElement.m in Sources */,
 				2C5423B1145ADF2B0026A152 /* QDateTimeInlineElement.m in Sources */,
+				7C7B3D911971879F00EDC2A6 /* Base64.m in Sources */,
 				2C5423BB145ADF2B0026A152 /* QLabelElement.m in Sources */,
 				2C5423B3145ADF2B0026A152 /* QElement.m in Sources */,
 				7CCC0FF3195AD62F00229008 /* QMultiRadioElement.m in Sources */,
+				7C7B3DAC1971879F00EDC2A6 /* UNIUrlConnection.m in Sources */,
 				D87A4D6F169DABA900D4DD63 /* QElement+Appearance.m in Sources */,
 				2C5423B5145ADF2B0026A152 /* QEntryElement.m in Sources */,
 				2C5423B7145ADF2B0026A152 /* QEntryTableViewCell.m in Sources */,
 				2C5423B9145ADF2B0026A152 /* QFloatElement.m in Sources */,
+				7C7B3D971971879F00EDC2A6 /* UNISimpleRequest.m in Sources */,
 				2C5423C3145ADF2B0026A152 /* QuickDialogController.m in Sources */,
+				7C7B3D9B1971879F00EDC2A6 /* UNIHTTPJsonResponse.m in Sources */,
 				2C5423C5145ADF2B0026A152 /* QuickDialogController+Loading.m in Sources */,
 				7CC98B90194E394300B1F5C2 /* QComboboxController.m in Sources */,
 				2C5423C7145ADF2B0026A152 /* QuickDialogDataSource.m in Sources */,
@@ -983,24 +1121,32 @@
 				2C5423D7145ADF2B0026A152 /* QSection.m in Sources */,
 				2C5423D9145ADF2B0026A152 /* QSortingSection.m in Sources */,
 				2C5423DB145ADF2B0026A152 /* QTextElement.m in Sources */,
+				7C7B3DA11971879F00EDC2A6 /* UNIJsonNode.m in Sources */,
 				D8F180E813F0599A009B0CA8 /* QBadgeLabel.m in Sources */,
 				D8F180E813F0599A009B0CB3 /* QBindingEvaluator.m in Sources */,
 				D871018714BB3D7A00156D9D /* QRootElement+JsonBuilder.m in Sources */,
 				D8F180E813F0599A009B0CB7 /* QRootBuilder.m in Sources */,
 				D8F180E813F0599A009B0CBC /* QLoadingElement.m in Sources */,
 				D8F180E813F0599A009B0CC0 /* QDynamicDataSection.m in Sources */,
+				7C7B3D931971879F00EDC2A6 /* UNIBaseRequest.m in Sources */,
+				7C7B3DA31971879F00EDC2A6 /* UNIHTTPClientHelper.m in Sources */,
 				D8F180E813F0599A009B0CC4 /* QTableViewCell.m in Sources */,
+				7C7B3D9F1971879F00EDC2A6 /* UNIHTTPStringResponse.m in Sources */,
 				D87A4D91169DB59500D4DD63 /* QAppearance.m in Sources */,
+				7C7B3D9D1971879F00EDC2A6 /* UNIHTTPResponse.m in Sources */,
 				7CC98B94194E394300B1F5C2 /* QTitleElement.m in Sources */,
 				194C3FC314EDF0510036C9E7 /* DOAutocompleteTextField.m in Sources */,
+				7C7B3D991971879F00EDC2A6 /* UNIHTTPBinaryResponse.m in Sources */,
 				D87B4FCC14F16197006DA833 /* QAutoEntryElement.m in Sources */,
 				D87B4FCE14F16197006DA833 /* QAutoEntryTableViewCell.m in Sources */,
 				D8F180E813F0599A009B0CC8 /* NSMutableArray+MoveObject.m in Sources */,
+				7C7B3D951971879F00EDC2A6 /* UNIBodyRequest.m in Sources */,
 				D8B39451151394E1008ECB34 /* QEmptyListElement.m in Sources */,
 				D8B39453151394E1008ECB34 /* QMultilineElement.m in Sources */,
 				D8B39456151394E1008ECB34 /* QMultilineTextViewController.m in Sources */,
 				D8B3946A1514E8B3008ECB34 /* QSegmentedElement.m in Sources */,
 				D8F180E813F0599A009B0CD2 /* QuickDialogWebController.m in Sources */,
+				7C7B3DA71971879F00EDC2A6 /* UNIHTTPRequestWithBody.m in Sources */,
 				F2E6149F151C9E4D00F36976 /* QSelectSection.m in Sources */,
 				F2E614A3151CA1A100F36976 /* QSelectItemElement.m in Sources */,
 				F2F23A26152DD48B00EB6687 /* QuickDialogController+Helpers.m in Sources */,
@@ -1068,11 +1214,17 @@
 		2C54239B145ADEBE0026A152 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DSTROOT = /tmp/libQuickDialog.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libQuickDialog/libQuickDialog-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/oleg/Documents/ios-projects/hooks_ios_app/Pods/build/Debug-iphoneos",
+					"/Users/oleg/Documents/ios-projects/hooks_ios_app/Pods/build/Release-iphoneos",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1084,11 +1236,17 @@
 		2C54239C145ADEBE0026A152 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DSTROOT = /tmp/libQuickDialog.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libQuickDialog/libQuickDialog-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/oleg/Documents/ios-projects/hooks_ios_app/Pods/build/Debug-iphoneos",
+					"/Users/oleg/Documents/ios-projects/hooks_ios_app/Pods/build/Release-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = /include/QuickDialog;
@@ -1172,6 +1330,10 @@
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Build";
 				INFOPLIST_FILE = "sample/quickdialogexample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/HooksApp-dwniqsjxarxviifeykjqaxjqrmyh/Build/Products/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
@@ -1188,6 +1350,10 @@
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Build";
 				INFOPLIST_FILE = "sample/quickdialogexample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/HooksApp-dwniqsjxarxviifeykjqaxjqrmyh/Build/Products/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;

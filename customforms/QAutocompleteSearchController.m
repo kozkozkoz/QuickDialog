@@ -19,6 +19,7 @@
     BOOL _viewOnScreen;
     BOOL _keyboardVisible;
     UITableView* _myTableView;
+    UNIUrlConnection *searchRequest;
 }
 
 @synthesize myTableView = _myTableView;
@@ -56,6 +57,7 @@
         //set the delegate to self so we can listen for events
         _mySearchBar.delegate = self;
         
+        /*
         //display the cancel button next to the search bar
         _mySearchBar.showsCancelButton = YES;
         
@@ -64,7 +66,7 @@
         _mySearchBar.translucent = NO;
         _mySearchBar.backgroundColor = UIColorFromRGB(0xf5f5f5);
         _mySearchBar.barTintColor = UIColorFromRGB(0x2f2f2f);
-        _mySearchBar.tintColor = UIColorFromRGB(0x2f2f2f);
+        _mySearchBar.tintColor = UIColorFromRGB(0x2f2f2f);*/
         
         
         
@@ -206,6 +208,7 @@
 - (void)handleSearch:(UISearchBar *)searchBar {
     
     //check what was passed as the query String and get rid of the keyboard
+    
     NSLog(@"User searched for %@", searchBar.text);
     self.queryString = searchBar.text;
     
@@ -220,58 +223,33 @@
     
     NSLog(@"SEARCH URL: %@", myUrlString);
     
-    //pass the query String in the body of the HTTP post
-    //NSString *body = @"";
+    if(searchRequest){
+        NSLog(@"Request canceled");
+        [searchRequest cancel];
+    }
     
-    NSString* webStringURL = [myUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *myUrl = [NSURL URLWithString:webStringURL];
-    
-    //make the HTTP request
-    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:myUrl];
-    [urlRequest setTimeoutInterval:30.0f];
-    [urlRequest setHTTPMethod:@"GET"];
-    
-    //[urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [NSURLConnection
-     sendAsynchronousRequest:urlRequest
-     queue:queue
-     completionHandler:^(NSURLResponse *response,
-                         NSData *data,
-                         NSError *error) {
-         //we got something in reponse to our request lets go ahead and process this
-         if ([data length] >0 && error == nil){
-             [self parseResponse:data];
-         }
-         else if ([data length] == 0 && error == nil){
-             NSLog(@"Empty Response, not sure why?");
-         }
-         else if (error != nil){
-             NSLog(@"Not again, what is the error = %@", error);
-         }
-     }];
+    searchRequest = [[UNIRest get:^(UNISimpleRequest* request) {
+        [request setUrl:myUrlString];
+    }] asJsonAsync:^(UNIHTTPJsonResponse* response, NSError *error) {
+        // This is the asyncronous callback block
+        //NSInteger* code = [response code];
+        //NSDictionary* responseHeaders = [response headers];
+        UNIJsonNode* body = [response body];
+        //NSData* rawBody = [response rawBody];
+        //NSLog(@"rawBody: %@",[[ [body JSONArray] objectAtIndex:0] objectForKey:@"message"]);
+        [self parseResponse:[body JSONObject]];
+    }];
     
 }
 
 //parse our JSON response from the server and load the NSMutableArray of countries
-- (void) parseResponse:(NSData *) data {
+- (void) parseResponse:(NSDictionary *) jsonObject {
     
-    NSString *myData = [[NSString alloc] initWithData:data
-                                             encoding:NSUTF8StringEncoding];
-    NSLog(@"JSON data = %@", myData);
-    NSError *error = nil;
-    
-    id jsonObject = [NSJSONSerialization
-                     JSONObjectWithData:data
-                     options:NSJSONReadingAllowFragments
-                     error:&error];
-    if (jsonObject != nil && error == nil){
+    if (jsonObject != nil){
         NSLog(@"Successfully deserialized...");
         
         NSString *success = [jsonObject objectForKey:@"status"];
         if([success isEqual:@"OK"]){
-            
             self.resultList = [jsonObject objectForKey:@"results"];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.myTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];

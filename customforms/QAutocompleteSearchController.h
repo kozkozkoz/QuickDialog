@@ -15,6 +15,7 @@
 
 #import <UIKit/UIKit.h>
 #import "QAutocompleteSearchElement.h"
+#import "UNIRest.h"
 
 @class QAutocompleteSearchController;
 @class QMultilineElement;
