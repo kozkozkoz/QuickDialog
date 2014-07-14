@@ -35,6 +35,7 @@
 
 
 - (void)bindObject:(id)object toData:(id)data {
+    
     if (![object respondsToSelector:@selector(bind)])				
         return;
 

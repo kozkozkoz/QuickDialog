@@ -16,6 +16,8 @@
 
 - (QComboboxElement *)initWithTitle:(NSString *)title value:(NSString *)text;
 
+- (void)fillValueFromObject:(id)params;
+
 @property(nonatomic, strong) NSString *engine;
 
 @property(nonatomic, assign) BOOL filter;

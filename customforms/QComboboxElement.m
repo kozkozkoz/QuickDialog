@@ -31,6 +31,7 @@
     return self;
 }
 
+
 - (QComboboxElement *)initWithTitle:(NSString *)title value:(NSString *)text
 {
     if ((self = [super initWithTitle:title Value:nil])) {
@@ -119,6 +120,15 @@
     if( [self.value isKindOfClass:[NSDictionary class]] ){
         [obj setObject:self.value forKey:_key];
     }
+}
+
+- (void)fillValueFromObject:(id)params
+{
+    NSDictionary *selectedValue = [params objectForKey:self.key];
+    self.value = selectedValue;
+    self.textValue = [selectedValue valueForKey:self.item_title];
+    
+    //NSLog(@"Tengo que rellenar: %@",selectedValue);
 }
 
 - (BOOL)canTakeFocus {

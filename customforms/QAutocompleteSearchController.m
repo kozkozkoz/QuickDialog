@@ -8,6 +8,7 @@
 
 #import "QAutocompleteSearchController.h"
 #import "QuickDialog.h"
+#import "SVProgressHUD.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -46,6 +47,10 @@
         self.item_title = itemTitle;
         self.item_description = itemDescription;
         
+        [[SVProgressHUD appearance] setHudBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.4]];
+        [[SVProgressHUD appearance] setHudForegroundColor:[UIColor blackColor]];
+        [[SVProgressHUD appearance] setHudFont:[UIFont fontWithName:@"MuseoSansRounded-500" size:16]];
+        [[SVProgressHUD appearance] setHudStatusShadowColor:[UIColor clearColor]];
         
         self.title = (title!=nil) ? title : NSLocalizedString(@"Note", @"Note");
         
@@ -201,11 +206,13 @@
 
 //user finished editing the search text
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
-    [self handleSearch:searchBar];
+    //[self handleSearch:searchBar];
 }
 
 //do our search on the remote server using HTTP request
 - (void)handleSearch:(UISearchBar *)searchBar {
+    
+    [SVProgressHUD showWithStatus:@"Searching"];
     
     //check what was passed as the query String and get rid of the keyboard
     
@@ -213,13 +220,17 @@
     self.queryString = searchBar.text;
     
     if(!self.isAutocomplete){
-        [searchBar resignFirstResponder];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [searchBar resignFirstResponder];
+        });
     }
-
+    
     
     //setup the remote server URI
-
+    
     NSString *myUrlString = [NSString stringWithFormat:@"%@/%@/%@",self.searchUrl,self.searchEngine,self.queryString];
+    
+    NSString* webStringURL = [myUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSLog(@"SEARCH URL: %@", myUrlString);
     
@@ -229,8 +240,12 @@
     }
     
     searchRequest = [[UNIRest get:^(UNISimpleRequest* request) {
-        [request setUrl:myUrlString];
+        [request setUrl:webStringURL];
     }] asJsonAsync:^(UNIHTTPJsonResponse* response, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+        
         // This is the asyncronous callback block
         //NSInteger* code = [response code];
         //NSDictionary* responseHeaders = [response headers];
