@@ -20,6 +20,7 @@
     BOOL _viewOnScreen;
     BOOL _keyboardVisible;
     UITableView* _myTableView;
+    NSIndexPath *prevSelectedRow;
 }
 
 @synthesize myTableView = _myTableView;
@@ -46,6 +47,7 @@
         if(items != nil && items.count>0){
             NSLog(@"RELLENO ITEMS: %@", items);
             self.resultList = items;
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.myTableView reloadData];
             });
@@ -182,6 +184,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.myTableView cellForRowAtIndexPath:prevSelectedRow].accessoryType = UITableViewCellAccessoryNone;
+    
+    prevSelectedRow = indexPath;
     
     UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -358,8 +363,6 @@
                           reuseIdentifier:TableViewCellIdentifier];
         }
         
-        myCellView.accessoryType = UITableViewCellAccessoryNone;
-        
         NSArray *listaActual = nil;
         if([self.queryString length] > 0){
             listaActual = self.resultListFiltered;
@@ -386,6 +389,15 @@
             
             myCellView.textLabel.text = [NSString stringWithFormat:@"%@",title];
             myCellView.detailTextLabel.text = description;
+            
+            myCellView.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            if([item isEqualToDictionary:self.entryElement.value]){
+                prevSelectedRow = indexPath;
+                myCellView.accessoryType = UITableViewCellAccessoryCheckmark;
+                [self.myTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+            }
+
         }
         //display message to user
         else {
@@ -393,8 +405,7 @@
             myCellView.detailTextLabel.text = @"";
         }
         
-        //set the table view cell style
-        [myCellView setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
         
     }
     return myCellView;

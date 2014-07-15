@@ -44,10 +44,11 @@
 - (UITableViewCell *)getCellForTableView:(QuickDialogTableView *)tableView controller:(QuickDialogController *)controller {
     QEntryTableViewCell *cell = (QEntryTableViewCell *) [super getCellForTableView:tableView controller:controller];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.selectionStyle = self.enabled ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
+    cell.selectionStyle = self.enabled ? UITableViewCellSelectionStyleGray : UITableViewCellSelectionStyleNone;
     cell.textField.enabled = NO;
     cell.textField.textAlignment = UITextAlignmentRight;
     
+    //cell.accessoryType = [_radioElement.selectedIndexes containsObject:selected] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     return cell;
 }
 
@@ -80,6 +81,8 @@
     
     __weak QComboboxElement *weakSelf = self;
 	__weak QComboboxController *weakTextController = textController;
+
+    
     textController.willDisappearCallback = ^ {
         
         if(weakSelf.engine!=nil && ![weakSelf.engine isEqual:@""]){

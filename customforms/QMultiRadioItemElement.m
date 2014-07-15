@@ -37,7 +37,7 @@
 
 - (UITableViewCell *)getCellForTableView:(QuickDialogTableView *)tableView controller:(QuickDialogController *)controller {
     UITableViewCell *cell = [super getCellForTableView:tableView controller:controller];
-    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     cell.backgroundColor = [UIColor whiteColor];
     NSNumber* selected = [NSNumber numberWithUnsignedInteger:_index];
   

@@ -78,6 +78,18 @@
 	[obj setValue:self.selectedItems forKey:_key];
 }
 
+- (void)fillValueFromObject:(id)params
+{
+    id selectedValue = [params objectForKey:self.key];
+    
+    NSMutableArray *selectedIndexesAux = [NSMutableArray array];
+    for(id item in selectedValue){
+        int objIndex = (int)[self.items indexOfObject:item];
+        [selectedIndexesAux addObject:[NSNumber numberWithInt:objIndex]];
+    }
+    self.selectedIndexes = selectedIndexesAux;
+}
+
 - (QMultiRadioElement *)initWithItems:(NSArray *)stringArray selectedIndexes:(NSArray*)selected title:(NSString *)title {
     self = [super init];
     if (self!=nil){
@@ -139,7 +151,7 @@
     }
     cell.textField.textAlignment = UITextAlignmentRight;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     cell.textField.userInteractionEnabled = NO;
     return cell;
 }
