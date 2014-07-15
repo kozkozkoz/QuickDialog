@@ -29,6 +29,8 @@
     BOOL _hiddenToolbar;
 }
 
+@property (nonatomic, strong) NSString *item_title;
+
 @property (nonatomic, strong) NSString *textValue;
 @property (nonatomic, strong) NSString *placeholder;
 @property (nonatomic, strong) NSString *prefix;
@@ -57,5 +59,7 @@
 - (void) fieldDidEndEditing;
 
 - (void)handleEditingChanged:(QEntryTableViewCell *)cell;
+
+- (void)fillValueFromObject:(id)params;
 
 @end

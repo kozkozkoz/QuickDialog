@@ -122,15 +122,6 @@
     }
 }
 
-- (void)fillValueFromObject:(id)params
-{
-    NSDictionary *selectedValue = [params objectForKey:self.key];
-    self.value = selectedValue;
-    self.textValue = [selectedValue valueForKey:self.item_title];
-    
-    //NSLog(@"Tengo que rellenar: %@",selectedValue);
-}
-
 - (BOOL)canTakeFocus {
     return NO;
 }

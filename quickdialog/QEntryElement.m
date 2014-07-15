@@ -83,8 +83,18 @@
 - (void)fetchValueIntoObject:(id)obj {
 	if (_key==nil)
 		return;
-	
 	[obj setValue:_textValue forKey:_key];
+}
+
+- (void)fillValueFromObject:(id)params
+{
+    id selectedValue = [params objectForKey:self.key];
+    self.value = selectedValue;
+    if([self.item_title isKindOfClass:[NSString class]] && self.item_title.length > 0){
+        self.textValue = [selectedValue valueForKey:self.item_title];
+    }else{
+        self.textValue = selectedValue;
+    }
 }
 
 - (BOOL)canTakeFocus {
