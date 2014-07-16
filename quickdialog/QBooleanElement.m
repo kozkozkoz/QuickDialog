@@ -122,6 +122,16 @@
     [obj setValue:[NSNumber numberWithBool:self.boolValue] forKey:_key];
 }
 
+- (void)fillValueFromObject:(id)params
+{
+    //NSLog(@"RECIBO PARAMS: %@",params);
+    id selectedValue = [params objectForKey:self.key];
+    if([selectedValue isKindOfClass:[NSNumber class]]){
+        self.boolValue = ((NSNumber *)selectedValue).boolValue;
+    }else{
+        self.boolValue = selectedValue ? YES : NO;
+    }
+}
 
 - (void)setNilValueForKey:(NSString *)key;
 {

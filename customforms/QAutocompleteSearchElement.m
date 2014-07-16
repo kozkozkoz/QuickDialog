@@ -15,6 +15,8 @@
 @synthesize delegate = _delegate;
 @synthesize engine;
 @synthesize isAutocomplete;
+@synthesize item_title;
+@synthesize item_description;
 
 
 - (QEntryElement *)init {

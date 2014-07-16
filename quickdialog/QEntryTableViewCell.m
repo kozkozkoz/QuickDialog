@@ -121,6 +121,7 @@
 
     _quickformTableView = tableView;
     _entryElement = element;
+    NSLog(@"textValue: %@",_entryElement.textValue);
     _textField.text = _entryElement.textValue;
     _textField.placeholder = _entryElement.placeholder;
     if ([_textField isKindOfClass:[QTextField class]]) {

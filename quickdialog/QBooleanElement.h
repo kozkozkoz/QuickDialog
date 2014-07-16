@@ -37,6 +37,7 @@
 
 - (void)setOffImageName:(NSString *)name;
 
-
 - (void)switched:(id)switched;
+
+- (void)fillValueFromObject:(id)params;
 @end

@@ -44,4 +44,6 @@
 
 - (QDateTimeInlineElement *)initWithTitle:(NSString *)string date:(NSDate *)date andMode:(UIDatePickerMode)mode;
 
+- (void)fillValueFromObject:(id)params;
+
 @end

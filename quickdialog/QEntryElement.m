@@ -88,12 +88,26 @@
 
 - (void)fillValueFromObject:(id)params
 {
+    //NSLog(@"RECIBO PARAMS: %@",params);
     id selectedValue = [params objectForKey:self.key];
     self.value = selectedValue;
+    NSLog(@"PARENT CLASS: %@",[super class]);
+    NSLog(@"RECIBO PARAMS: %@",[selectedValue class]);
     if([self.item_title isKindOfClass:[NSString class]] && self.item_title.length > 0){
-        self.textValue = [selectedValue valueForKey:self.item_title];
+        
+        if([[selectedValue valueForKey:self.item_title] isKindOfClass:[NSString class]]){
+            self.textValue = [selectedValue valueForKey:self.item_title];
+        }else if([[selectedValue valueForKey:self.item_title] isKindOfClass:[NSNumber class]]){
+            self.textValue = [(NSNumber *)[selectedValue valueForKey:self.item_title] stringValue];
+        }
+        
+        
     }else{
-        self.textValue = selectedValue;
+        if([selectedValue isKindOfClass:[NSString class]]){
+            self.textValue = selectedValue;
+        }else if([selectedValue isKindOfClass:[NSNumber class]]){
+            self.textValue = [(NSNumber *)selectedValue stringValue];
+        }
     }
 }
 

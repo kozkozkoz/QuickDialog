@@ -152,6 +152,29 @@
     [obj setValue:dateValueFormatted forKey:_key];
 }
 
+- (void)fillValueFromObject:(id)params
+{
+    //NSLog(@"RECIBO PARAMS: %@",params);
+    id selectedValue = [params objectForKey:self.key];
+    self.value = selectedValue;
+    NSLog(@"PARENT CLASS: %@",[super class]);
+    NSLog(@"RECIBO PARAMS: %@",[selectedValue class]);
+ 
+        
+    if([selectedValue isKindOfClass:[NSString class]]){
+            
+        // Convert string to date object
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"YYYY-MM-dd HH:mm:SS"];
+        self.dateValue = [dateFormat dateFromString:selectedValue];
+
+    }else if([selectedValue isKindOfClass:[NSDate class]]){
+        self.dateValue = selectedValue;
+    }
+    
+}
+
+
 - (CGFloat)getRowHeightForTableView:(QuickDialogTableView *)tableView
 {
     CGFloat height = [super getRowHeightForTableView:tableView];
