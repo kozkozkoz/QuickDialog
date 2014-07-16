@@ -90,6 +90,10 @@
 {
     //NSLog(@"RECIBO PARAMS: %@",params);
     id selectedValue = [params objectForKey:self.key];
+    if(selectedValue == nil){
+        return;
+    }
+    
     self.value = selectedValue;
     NSLog(@"PARENT CLASS: %@",[super class]);
     NSLog(@"RECIBO PARAMS: %@",[selectedValue class]);

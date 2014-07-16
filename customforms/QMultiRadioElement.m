@@ -81,6 +81,9 @@
 - (void)fillValueFromObject:(id)params
 {
     id selectedValue = [params objectForKey:self.key];
+    if(selectedValue == nil){
+        return;
+    }
     
     NSMutableArray *selectedIndexesAux = [NSMutableArray array];
     for(id item in selectedValue){

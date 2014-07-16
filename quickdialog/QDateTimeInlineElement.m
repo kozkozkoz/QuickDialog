@@ -32,14 +32,18 @@
 
 - (QDateTimeInlineElement *)init {
     self = [super init];
-    _dateValue = [NSDate date];
+    //_dateValue = [NSDate date];
+    _dateValue = nil;
+    self.dateValue = nil;
     self.keepSelected = YES;
     return self;
 }
 
 - (QDateTimeInlineElement *)initWithKey:(NSString *)key {
     self = [super initWithKey:key];
-    _dateValue = [NSDate date];
+    //_dateValue = [NSDate date];
+    _dateValue = nil;
+    self.dateValue = nil;
     self.keepSelected = YES;
     return self;
 }
@@ -65,12 +69,17 @@
 
 - (NSDate *)dateValue
 {
-    if (self.mode == UIDatePickerModeDate)   {
-        NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
-        NSDateComponents *dateComponents = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:_dateValue];
-        _dateValue = [gregorian dateFromComponents:dateComponents];
+    if(_dateValue != nil){
+        if (self.mode == UIDatePickerModeDate)   {
+            NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+            NSDateComponents *dateComponents = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:_dateValue];
+            _dateValue = [gregorian dateFromComponents:dateComponents];
+        }
+        return _dateValue;
+    }else{
+        return nil;
     }
-    return _dateValue;
+
 }
 
 -(NSNumber *)ticksValue {
@@ -98,7 +107,6 @@
     cell.selectionStyle = !self.enabled || self.showPickerInCell ? UITableViewCellSelectionStyleNone : UITableViewCellSelectionStyleBlue;
     cell.imageView.image = self.image;
     cell.labelingPolicy = self.labelingPolicy;
-
     return cell;
 }
 
@@ -110,6 +118,9 @@
     }
     _cell = cell;
     [cell prepareForElement:self inTableView:tableView];
+    if(_dateValue == nil){
+        cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+    }
     cell.selectionStyle = self.enabled ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
     cell.textField.enabled = self.enabled;
     cell.textField.userInteractionEnabled = self.enabled;
@@ -131,12 +142,16 @@
 
 
 - (NSString *)textValue {
-    NSTimeInterval timeInterval = self.dateValue.timeIntervalSinceNow;
-    NSInteger ti = (NSInteger)timeInterval;
-    NSInteger seconds = ti % 60;
-    NSInteger minutes = (ti / 60) % 60;
-    NSInteger hours = (ti / 3600);
-    return [NSString stringWithFormat:@"%02li:%02li:%02li", (long)hours, (long)minutes, (long)seconds];
+    if(_dateValue != nil){
+        NSTimeInterval timeInterval = self.dateValue.timeIntervalSinceNow;
+        NSInteger ti = (NSInteger)timeInterval;
+        NSInteger seconds = ti % 60;
+        NSInteger minutes = (ti / 60) % 60;
+        NSInteger hours = (ti / 3600);
+        return [NSString stringWithFormat:@"%02li:%02li:%02li", (long)hours, (long)minutes, (long)seconds];
+    }else{
+        return @"select date";
+    }
 }
 
 
@@ -156,6 +171,10 @@
 {
     //NSLog(@"RECIBO PARAMS: %@",params);
     id selectedValue = [params objectForKey:self.key];
+    if(selectedValue == nil){
+        return;
+    }
+    
     self.value = selectedValue;
     NSLog(@"PARENT CLASS: %@",[super class]);
     NSLog(@"RECIBO PARAMS: %@",[selectedValue class]);

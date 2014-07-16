@@ -121,10 +121,16 @@
 				break;
         }
     }
+    
+    NSString *value = @"";
+    if(dateElement.dateValue != nil){
+        value = dateElement.mode!=UIDatePickerModeCountDownTimer
+        ? [dateFormatter stringFromDate:dateElement.dateValue]
+        : [self formatInterval:dateElement.ticksValue.doubleValue];
+    }else{
+        value = dateElement.placeholder;
+    }
 
-    NSString *value = dateElement.mode!=UIDatePickerModeCountDownTimer
-            ? [dateFormatter stringFromDate:dateElement.dateValue]
-            : [self formatInterval:dateElement.ticksValue.doubleValue];
     if (!dateElement.centerLabel){
 		self.textLabel.text = element.title;
         self.centeredLabel.text = nil;

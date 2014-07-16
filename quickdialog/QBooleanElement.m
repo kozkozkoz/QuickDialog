@@ -126,9 +126,13 @@
 {
     //NSLog(@"RECIBO PARAMS: %@",params);
     id selectedValue = [params objectForKey:self.key];
+    if(selectedValue == nil){
+        return;
+    }
+    
     if([selectedValue isKindOfClass:[NSNumber class]]){
         self.boolValue = ((NSNumber *)selectedValue).boolValue;
-    }else{
+    }else if(selectedValue != nil){
         self.boolValue = selectedValue ? YES : NO;
     }
 }
