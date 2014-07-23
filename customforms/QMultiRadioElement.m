@@ -80,16 +80,27 @@
 
 - (void)fillValueFromObject:(id)params
 {
-    id selectedValue = [params objectForKey:self.key];
-    if(selectedValue == nil){
+    id selectedValues = [params objectForKey:self.key];
+    if(selectedValues == nil){
         return;
     }
-    
+    int objIndex = -1;
     NSMutableArray *selectedIndexesAux = [NSMutableArray array];
-    for(id item in selectedValue){
-        int objIndex = (int)[self.items indexOfObject:item];
-        [selectedIndexesAux addObject:[NSNumber numberWithInt:objIndex]];
+    if([selectedValues isKindOfClass:[NSArray class]]){
+    
+        for(id itemAux in selectedValues){
+            objIndex = (int)[self.items indexOfObject:itemAux];
+            if(objIndex > -1){
+                [selectedIndexesAux addObject:[NSNumber numberWithInt:objIndex]];
+            }
+        }
+    }else if([selectedValues isKindOfClass:[NSDictionary class]]){
+        objIndex = (int)[self.items indexOfObject:selectedValues];
+        if(objIndex > -1){
+            [selectedIndexesAux addObject:[NSNumber numberWithInt:objIndex]];
+        }
     }
+    
     self.selectedIndexes = selectedIndexesAux;
 }
 
