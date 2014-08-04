@@ -89,7 +89,7 @@
 
 - (void)fillValueFromObject:(id)params
 {
-    //NSLog(@"RECIBO PARAMS: %@",params);
+    NSLog(@"RECIBO PARAMS: %@",params);
     id selectedValue = [params objectForKey:self.key];
     if(selectedValue == nil){
         return;

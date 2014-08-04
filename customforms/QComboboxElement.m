@@ -56,13 +56,6 @@
 - (void)selected:(QuickDialogTableView *)tableView controller:(QuickDialogController *)controller indexPath:(NSIndexPath *)indexPath
 {
     
-    if(self.filter){
-     NSLog(@"estoy en selected de combobox: true");
-    }else{
-     NSLog(@"estoy en selected de combobox: false");
-    }
-   
-    
     QComboboxController *textController = [[QComboboxController alloc] initWithTitle:self.title engine:self.engine showFilter:self.filter placeholder:self.placeholder selected:self.selected item_title:self.item_title item_description:self.item_description items:self.items];
     
     textController.entryElement = self;

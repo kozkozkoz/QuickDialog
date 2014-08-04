@@ -123,7 +123,10 @@
 
 - (void)viewDidLoad
 {
-    [self initCombobox];
+    if(self.items.count == 0 && [self.engine isKindOfClass:[NSString class]] && ![self.engine isEqualToString:@""]){
+        [self initCombobox];
+    }
+    
     [super viewDidLoad];
     
 }
@@ -393,9 +396,14 @@
             myCellView.selectionStyle = UITableViewCellSelectionStyleNone;
             
             if([item isEqualToDictionary:self.entryElement.value]){
+                
+                NSLog(@"%@ <-> %@",item, self.entryElement.value);
+                
                 prevSelectedRow = indexPath;
                 myCellView.accessoryType = UITableViewCellAccessoryCheckmark;
                 [self.myTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+            }else{
+                myCellView.accessoryType = UITableViewCellAccessoryNone;
             }
 
         }
