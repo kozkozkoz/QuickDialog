@@ -121,7 +121,6 @@
 
     _quickformTableView = tableView;
     _entryElement = element;
-    NSLog(@"textValue: %@",_entryElement.textValue);
     _textField.text = _entryElement.textValue;
     _textField.placeholder = _entryElement.placeholder;
     if ([_textField isKindOfClass:[QTextField class]]) {
@@ -138,6 +137,7 @@
     _textField.clearsOnBeginEditing = _entryElement.clearsOnBeginEditing;
     _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     _textField.textAlignment = _entryElement.appearance.entryAlignment;
+    _textField.adjustsFontSizeToFitWidth = YES;
 
     _textField.returnKeyType = _entryElement.returnKeyType;
     _textField.enablesReturnKeyAutomatically = _entryElement.enablesReturnKeyAutomatically;

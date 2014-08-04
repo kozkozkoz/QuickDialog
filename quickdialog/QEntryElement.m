@@ -65,6 +65,7 @@
     cell.textField.enabled = self.enabled;
     cell.textField.userInteractionEnabled = self.enabled;
     cell.textField.textAlignment = self.appearance.entryAlignment;
+    cell.textField.adjustsFontSizeToFitWidth = YES;
     cell.imageView.image = self.image;
     [cell prepareForElement:self inTableView:tableView];
     return cell;

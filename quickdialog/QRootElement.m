@@ -106,8 +106,9 @@
 - (UITableViewCell *)getCellForTableView:(QuickDialogTableView *)tableView controller:(QuickDialogController *)controller {
     UITableViewCell *cell = [super getCellForTableView:tableView controller:controller];
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-    if (_title!= nil)
+    if (_title!= nil){
         cell.textLabel.text = [NSString stringWithFormat:@"%@", _title];
+    }
     return cell;
 }
 

@@ -64,7 +64,11 @@
 
     [cell applyAppearanceForElement:self];
 
-    cell.textLabel.text = nil; 
+    cell.textLabel.text = nil;
+    
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    cell.textLabel.numberOfLines = 1;
+    
     cell.detailTextLabel.text = nil; 
     cell.imageView.image = nil; 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
