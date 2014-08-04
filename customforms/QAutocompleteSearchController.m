@@ -331,6 +331,8 @@
             
             if([title isKindOfClass:[NSString class]]){
                 myCellView.textLabel.text = [NSString stringWithFormat:@"%@",title];
+                myCellView.textLabel.adjustsFontSizeToFitWidth = YES;
+                myCellView.textLabel.minimumScaleFactor = .8f;
             }
             if([description isKindOfClass:[NSString class]]){
                 myCellView.detailTextLabel.text = description;
