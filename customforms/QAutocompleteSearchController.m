@@ -242,17 +242,27 @@
     searchRequest = [[UNIRest get:^(UNISimpleRequest* request) {
         [request setUrl:webStringURL];
     }] asJsonAsync:^(UNIHTTPJsonResponse* response, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
-        });
         
-        // This is the asyncronous callback block
-        //NSInteger* code = [response code];
-        //NSDictionary* responseHeaders = [response headers];
-        UNIJsonNode* body = [response body];
-        //NSData* rawBody = [response rawBody];
-        //NSLog(@"rawBody: %@",[[ [body JSONArray] objectAtIndex:0] objectForKey:@"message"]);
-        [self parseResponse:[body JSONObject]];
+        
+        if(response == nil || [response code] != 200){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD showErrorWithStatus:@"Please check the internet connection"];
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
+            
+            // This is the asyncronous callback block
+            //NSInteger* code = [response code];
+            //NSDictionary* responseHeaders = [response headers];
+            UNIJsonNode* body = [response body];
+            //NSData* rawBody = [response rawBody];
+            //NSLog(@"rawBody: %@",[[ [body JSONArray] objectAtIndex:0] objectForKey:@"message"]);
+            [self parseResponse:[body JSONObject]];
+        }
+        
+
     }];
     
 }
@@ -304,7 +314,6 @@
 //asks the data source for a cell to insert in a particular location of the table view
 - (UITableViewCell *) tableView:(UITableView *)tableView
           cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     
     UITableViewCell *myCellView = nil;
     

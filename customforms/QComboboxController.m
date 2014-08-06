@@ -276,6 +276,7 @@
      completionHandler:^(NSURLResponse *response,
                          NSData *data,
                          NSError *error) {
+         
          //we got something in reponse to our request lets go ahead and process this
          if ([data length] >0 && error == nil){
              [self parseResponse:data];
