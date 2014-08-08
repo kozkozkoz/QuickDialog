@@ -45,12 +45,13 @@
         self.searchUrl = @"http://78.47.69.173/search";
         
         if(items != nil && items.count>0){
+            
             NSLog(@"RELLENO ITEMS: %@", items);
             self.resultList = items;
             
-            dispatch_async(dispatch_get_main_queue(), ^{
+            /*dispatch_async(dispatch_get_main_queue(), ^{
                 [self.myTableView reloadData];
-            });
+            });*/
         }
         
         self.items = items;
@@ -123,11 +124,22 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     if(self.items.count == 0 && [self.engine isKindOfClass:[NSString class]] && ![self.engine isEqualToString:@""]){
         [self initCombobox];
     }
     
-    [super viewDidLoad];
+    if(self.entryElement.value != nil){
+        
+        NSInteger selectedIndex = [[self currentResultList] indexOfObject:self.entryElement.value];
+        
+        NSIndexPath *indexPathSelected = [NSIndexPath indexPathForItem:selectedIndex inSection:0];
+        
+        [self.myTableView selectRowAtIndexPath:indexPathSelected animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }
+    
+    NSLog(@"curValuE: %@",self.entryElement.value);
     
 }
 
@@ -187,9 +199,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.myTableView cellForRowAtIndexPath:prevSelectedRow].accessoryType = UITableViewCellAccessoryNone;
+    //[self.myTableView cellForRowAtIndexPath:prevSelectedRow].accessoryType = UITableViewCellAccessoryNone;
     
-    prevSelectedRow = indexPath;
+    //prevSelectedRow = [indexPath copy];
     
     UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -328,24 +340,17 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section{
     
-    NSArray *listaActual = nil;
-    if([self.queryString length] > 0){
-        listaActual = self.resultListFiltered;
-    }else{
-        listaActual = self.resultList;
-    }
+    NSInteger numberOfRows = [self currentResultList].count;
     
-    NSInteger numberOfRows = 0;
-    //get the count from the array
-    if ([tableView isEqual:self.myTableView]){
-        numberOfRows = listaActual.count;
-    }
-    //if user searched for something and found nothing just add a row to display a message
     if(numberOfRows == 0 && [self.queryString length] > 0){
         numberOfRows = 1;
     }
-    NSLog(@"Rows: %li", (long)numberOfRows);
+    
     return numberOfRows;
+}
+
+-(NSArray *)currentResultList {
+	return ([self.queryString length] > 0) ? self.resultListFiltered : self.resultList;
 }
 
 
@@ -353,70 +358,47 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView
           cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    NSLog(@"cellForRowAtIndexPath.indexPath: %@",indexPath);
     UITableViewCell *myCellView = nil;
-    
-    if ([tableView isEqual:self.myTableView]){
-        
-        static NSString *TableViewCellIdentifier = @"CountryCells";
-        //create a reusable table-view cell object located by its identifier
-        myCellView = [tableView dequeueReusableCellWithIdentifier:TableViewCellIdentifier];
-        if (myCellView == nil){
-            myCellView = [[UITableViewCell alloc]
-                          initWithStyle:UITableViewCellStyleValue1
-                          reuseIdentifier:TableViewCellIdentifier];
-        }
-        
-        NSArray *listaActual = nil;
-        if([self.queryString length] > 0){
-            listaActual = self.resultListFiltered;
-        }else{
-            listaActual = self.resultList;
-        }
-        
-        //if there are countries to display
-        if(listaActual.count > 0){
-            NSDictionary *item = [listaActual objectAtIndex:indexPath.row];
-            NSLog(@"Result item: %@",item);
-            NSLog(@"engine: %@",self.engine);
-            
-            NSString *title = @"";
-            NSString *description = @"";
-            
-            if(self.engine!=nil && ![self.engine isEqual:@""]){
-                title = ![self.item_title isEqual:@""] ? [item  valueForKey:self.item_title] : @"";
-                description = ![self.item_description isEqual:@""] ? [item  valueForKey:self.item_description] : @"";
-            }else{
-                title = [item  valueForKey:@"text"];
-            }
 
-            
-            myCellView.textLabel.text = [NSString stringWithFormat:@"%@",title];
-            myCellView.detailTextLabel.text = description;
-            
-            myCellView.selectionStyle = UITableViewCellSelectionStyleNone;
-            
-            if([item isEqualToDictionary:self.entryElement.value]){
-                
-                NSLog(@"%@ <-> %@",item, self.entryElement.value);
-                
-                prevSelectedRow = indexPath;
-                myCellView.accessoryType = UITableViewCellAccessoryCheckmark;
-                [self.myTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
-            }else{
-                myCellView.accessoryType = UITableViewCellAccessoryNone;
-            }
-
-        }
-        //display message to user
-        else {
-            myCellView.textLabel.text = @"No Results found, try again!";
-            myCellView.detailTextLabel.text = @"";
-        }
-        
-        
-        
+    static NSString *TableViewCellIdentifier = @"CountryCells";
+    //create a reusable table-view cell object located by its identifier
+    myCellView = [tableView dequeueReusableCellWithIdentifier:TableViewCellIdentifier];
+    if (myCellView == nil){
+        myCellView = [[UITableViewCell alloc]
+                      initWithStyle:UITableViewCellStyleValue1
+                      reuseIdentifier:TableViewCellIdentifier];
     }
+    
+    if([self currentResultList].count > 0){
+        
+        NSLog(@"%@ <-> %@",indexPath,[self.myTableView indexPathForSelectedRow]);
+        if([indexPath compare:[self.myTableView indexPathForSelectedRow]] == NSOrderedSame){
+            myCellView.accessoryType = UITableViewCellAccessoryCheckmark;
+        }else{
+            myCellView.accessoryType = UITableViewCellAccessoryNone;
+        }
+        
+        NSDictionary *item = [[self currentResultList] objectAtIndex:indexPath.row];
+        
+        NSString *title = @"";
+        NSString *description = @"";
+        
+        if(self.engine!=nil && ![self.engine isEqual:@""]){
+            title = ![self.item_title isEqual:@""] ? [item  valueForKey:self.item_title] : @"";
+            description = ![self.item_description isEqual:@""] ? [item  valueForKey:self.item_description] : @"";
+        }else{
+            title = [item  valueForKey:@"text"];
+        }
+        
+        
+        myCellView.textLabel.text = [NSString stringWithFormat:@"%@",title];
+        myCellView.detailTextLabel.text = description;
+    }else{
+        myCellView.textLabel.text = @"No Results found, try again!";
+        myCellView.detailTextLabel.text = @"";
+    }
+
     return myCellView;
 }
 
