@@ -375,6 +375,7 @@
         NSLog(@"%@ <-> %@",indexPath,[self.myTableView indexPathForSelectedRow]);
         if([indexPath compare:[self.myTableView indexPathForSelectedRow]] == NSOrderedSame){
             myCellView.accessoryType = UITableViewCellAccessoryCheckmark;
+            myCellView.selectionStyle = UITableViewCellSelectionStyleNone;
         }else{
             myCellView.accessoryType = UITableViewCellAccessoryNone;
         }
