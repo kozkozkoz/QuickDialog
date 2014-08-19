@@ -42,7 +42,7 @@
     {
         NSLog(@"INICIANDO COMBOBOX: %lu",(unsigned long)items.count);
         
-        self.searchUrl = @"http://78.47.69.173/search";
+        self.searchUrl = @"http://api.gethooksapp.com/search";
         
         if(items != nil && items.count>0){
             

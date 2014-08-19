@@ -41,7 +41,7 @@
     {
         NSLog(@"INICIANDO AUTOCOMPLETE-SEARCH WITH ENGINE: %@",engine);
         
-        self.searchUrl = @"http://78.47.69.173/search";
+        self.searchUrl = @"http://api.gethooksapp.com/search";
         self.isAutocomplete = isAutocompleter;
         self.searchEngine = engine;
         self.item_title = itemTitle;
