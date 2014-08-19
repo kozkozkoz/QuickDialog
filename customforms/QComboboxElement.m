@@ -81,7 +81,6 @@
     
     textController.willDisappearCallback = ^ {
         
-        if(weakSelf.engine!=nil && ![weakSelf.engine isEqual:@""]){
             if([weakTextController.queryString length] > 0){
                 
                 if([weakTextController.resultListFiltered count] > 0){
@@ -102,16 +101,6 @@
                     }
 
             }
-
-        }else{
-            NSLog(@"Selected index path: %@",weakTextController.myTableView.indexPathForSelectedRow);
-            
-            if(weakTextController.myTableView.indexPathForSelectedRow != nil){
-                weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:@"text"];
-                
-                weakSelf.value = [weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
-            }
-        }
         
         //[tableView cellForElement:weakSelf].detailTextLabel.backgroundColor = [UIColor redColor];
         //[tableView deselectRowAtIndexPath:indexPath animated:YES];

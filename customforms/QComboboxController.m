@@ -75,14 +75,14 @@
             _mySearchBar.delegate = self;
             
             //display the cancel button next to the search bar
-            _mySearchBar.showsCancelButton = YES;
+            /*_mySearchBar.showsCancelButton = YES;
             
             _mySearchBar.showsCancelButton = NO;
             _mySearchBar.searchBarStyle = UISearchBarStyleMinimal;
             _mySearchBar.translucent = NO;
             _mySearchBar.backgroundColor = UIColorFromRGB(0xf5f5f5);
             _mySearchBar.barTintColor = UIColorFromRGB(0x2f2f2f);
-            _mySearchBar.tintColor = UIColorFromRGB(0x2f2f2f);
+            _mySearchBar.tintColor = UIColorFromRGB(0x2f2f2f);*/
         
             myFrame.origin.y += 44;
         }
