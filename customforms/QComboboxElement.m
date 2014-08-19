@@ -23,6 +23,7 @@
 
 
 - (QEntryElement *)init {
+    
     self = [super init];
     if (self) {
         self.presentationMode = QPresentationModePopover;
@@ -56,6 +57,8 @@
 - (void)selected:(QuickDialogTableView *)tableView controller:(QuickDialogController *)controller indexPath:(NSIndexPath *)indexPath
 {
     
+    NSLog(@"Self.value1: %@", self.value);
+    
     QComboboxController *textController = [[QComboboxController alloc] initWithTitle:self.title engine:self.engine showFilter:self.filter placeholder:self.placeholder selected:self.selected item_title:self.item_title item_description:self.item_description items:self.items];
     
     textController.entryElement = self;
@@ -82,28 +85,40 @@
             if([weakTextController.queryString length] > 0){
                 
                 if([weakTextController.resultListFiltered count] > 0){
-                    weakSelf.textValue = [[weakTextController.resultListFiltered objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
+                    if(weakTextController.myTableView.indexPathForSelectedRow != nil){
+                        weakSelf.textValue = [[weakTextController.resultListFiltered objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
                 
-                    weakSelf.value = [weakTextController.resultListFiltered objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
+                        weakSelf.value = [weakTextController.resultListFiltered objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
+                    }
                 }
-                }else{
+                
+            }else{
                     if([weakTextController.resultList count] > 0){
-                        weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
+                        if(weakTextController.myTableView.indexPathForSelectedRow != nil){
+                            weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:weakSelf.item_title];
                         
-                        weakSelf.value = [weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
+                            weakSelf.value = [weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
+                        }
                     }
 
             }
 
         }else{
-           weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:@"text"];
+            NSLog(@"Selected index path: %@",weakTextController.myTableView.indexPathForSelectedRow);
             
-           weakSelf.value = [weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
+            if(weakTextController.myTableView.indexPathForSelectedRow != nil){
+                weakSelf.textValue = [[weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row] valueForKey:@"text"];
+                
+                weakSelf.value = [weakTextController.resultList objectAtIndex:weakTextController.myTableView.indexPathForSelectedRow.row];
+            }
         }
         
         //[tableView cellForElement:weakSelf].detailTextLabel.backgroundColor = [UIColor redColor];
         //[tableView deselectRowAtIndexPath:indexPath animated:YES];
     };
+    
+    NSLog(@"Self.value: %@", self.value);
+    
     [controller displayViewController:textController withPresentationMode:self.presentationMode];
 }
 

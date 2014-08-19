@@ -130,13 +130,18 @@
         [self initCombobox];
     }
     
-    if(self.entryElement.value != nil){
+    if(self.entryElement.textValue != nil){
+        
+        NSLog(@"Entry Element: %@",self.entryElement.value);
         
         NSInteger selectedIndex = [[self currentResultList] indexOfObject:self.entryElement.value];
         
-        NSIndexPath *indexPathSelected = [NSIndexPath indexPathForItem:selectedIndex inSection:0];
+        if(selectedIndex != NSNotFound){
+            NSIndexPath *indexPathSelected = [NSIndexPath indexPathForItem:selectedIndex inSection:0];
+            [self.myTableView selectRowAtIndexPath:indexPathSelected animated:NO scrollPosition:UITableViewScrollPositionNone];
+        }
         
-        [self.myTableView selectRowAtIndexPath:indexPathSelected animated:NO scrollPosition:UITableViewScrollPositionNone];
+
     }
     
     NSLog(@"curValuE: %@",self.entryElement.value);
@@ -189,7 +194,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    NSLog(@"Will disapear");
+
     _viewOnScreen = NO;
     if (_willDisappearCallback !=nil){
         _willDisappearCallback();
@@ -373,6 +378,7 @@
     if([self currentResultList].count > 0){
         
         NSLog(@"%@ <-> %@",indexPath,[self.myTableView indexPathForSelectedRow]);
+        
         if([indexPath compare:[self.myTableView indexPathForSelectedRow]] == NSOrderedSame){
             myCellView.accessoryType = UITableViewCellAccessoryCheckmark;
             myCellView.selectionStyle = UITableViewCellSelectionStyleNone;
