@@ -49,7 +49,7 @@
         
         [[SVProgressHUD appearance] setHudBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.4]];
         [[SVProgressHUD appearance] setHudForegroundColor:[UIColor blackColor]];
-        [[SVProgressHUD appearance] setHudFont:[UIFont fontWithName:@"MuseoSansRounded-500" size:16]];
+        [[SVProgressHUD appearance] setHudFont:[UIFont fontWithName:@"HelveticaNeue" size:16]];
         [[SVProgressHUD appearance] setHudStatusShadowColor:[UIColor clearColor]];
         
         self.title = (title!=nil) ? title : NSLocalizedString(@"Note", @"Note");
