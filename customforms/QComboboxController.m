@@ -62,7 +62,7 @@
         self.item_title = item_title;
         self.item_description = item_description;
         
-        self.title = (title!=nil) ? title : NSLocalizedString(@"Note", @"Note");
+        self.title = title;
         
         CGRect myFrame = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y,
                                     self.view.bounds.size.width, 44.0f);
@@ -107,6 +107,9 @@
         _myTableView.backgroundView = nil;
         
     }
+    
+    NSLog(@"self value: %@",self.entryElement.value);
+    
     return self;
 }
 

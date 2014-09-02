@@ -39,6 +39,7 @@
         self.textValue = text;
         self.presentationMode = QPresentationModePopover;
     }
+    
     return self;
 }
 
@@ -50,6 +51,9 @@
     cell.textField.textAlignment = UITextAlignmentRight;
     
     //cell.accessoryType = [_radioElement.selectedIndexes containsObject:selected] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    
+    NSLog(@"Self.value2: %@", self.value);
+    
     return cell;
 }
 
@@ -117,7 +121,7 @@
 		return;
 	}
     
-    if( [self.value isKindOfClass:[NSDictionary class]] ){
+    if( self.textValue != nil && ![self.textValue isEqualToString:@""] && [self.value isKindOfClass:[NSDictionary class]] ){
         [obj setObject:self.value forKey:_key];
     }
 }
