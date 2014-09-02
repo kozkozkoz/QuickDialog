@@ -108,7 +108,7 @@
         
     }
     
-    NSLog(@"self value: %@",self.entryElement.value);
+    //NSLog(@"self value: %@",self.entryElement.value);
     
     return self;
 }
